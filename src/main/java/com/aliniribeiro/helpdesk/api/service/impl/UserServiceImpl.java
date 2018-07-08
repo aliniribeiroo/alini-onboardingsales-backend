@@ -9,8 +9,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -24,7 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createOrupdate(User user) {
+    public User createOrUpdate(User user) {
         return userRepository.save(user);
     }
 
@@ -40,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Page<User> findAll(int page, int count) {
-         Pageable pages = new PageRequest(page, count);
+        Pageable pages = new PageRequest(page, count);
         return userRepository.findAll(pages);
     }
 }

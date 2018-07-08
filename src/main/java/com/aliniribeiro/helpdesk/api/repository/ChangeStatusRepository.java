@@ -7,5 +7,5 @@ import java.io.Serializable;
 
 public interface ChangeStatusRepository extends JpaRepository<ChangeStatus, String> {
 
-  //  Iterable<ChangeStatus> findByTicketIdOrderByDateDesc(String ticketId);
+  Iterable<ChangeStatus> findByTicketOrderByCreationDateDesc(String ticketId);
 }

@@ -14,12 +14,11 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String Id;
 
     @Indexed(unique = true)
     @NotBlank(message = "Email required")
-    @Email(message = "Email invalid")
     @Column(name = "email", nullable = false)
     private String email;
 

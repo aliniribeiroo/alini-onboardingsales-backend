@@ -7,7 +7,7 @@ public interface UserService {
 
     User findByEmail(String email);
 
-    User createOrupdate(User user);
+    User createOrUpdate(User user);
 
     User findById(String id);
 

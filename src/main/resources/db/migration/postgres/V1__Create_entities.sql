@@ -1,5 +1,5 @@
 CREATE TABLE USERACCOUNT (
-    ID serial NOT NULL PRIMARY KEY,
+    ID text NOT NULL PRIMARY KEY default MD5(random()::text),
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
 	profile VARCHAR(255) NOT NULL

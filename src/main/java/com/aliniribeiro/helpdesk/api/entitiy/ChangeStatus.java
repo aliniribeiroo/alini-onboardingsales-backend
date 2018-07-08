@@ -15,7 +15,7 @@ public class ChangeStatus  implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String Id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -24,8 +24,8 @@ public class ChangeStatus  implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private User userchange;
 
-    @Column(name = "date", nullable = false)
-    private Date date;
+    @Column(name = "creationdate", nullable = false)
+    private Date creationDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
@@ -56,11 +56,11 @@ public class ChangeStatus  implements Serializable {
     }
 
     public Date getDate() {
-        return date;
+        return creationDate;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.creationDate = date;
     }
 
     public StatusEnum getStatus() {
